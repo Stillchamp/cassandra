@@ -1,0 +1,44 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cassandraGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="128" fill="url(#cassandraGradient)" opacity="0.1"/>
+  
+  <!-- Main geometric shape - stylized C with quality indicator -->
+  <g filter="url(#shadow)">
+    <!-- Outer ring arc (C shape) -->
+    <path d="M 80 60 A 68 68 0 0 0 80 196" 
+          stroke="url(#cassandraGradient)" 
+          stroke-width="12" 
+          fill="none" 
+          stroke-linecap="round"/>
+    
+    <!-- Inner quality check mark integrated -->
+    <g transform="translate(160, 100)">
+      <!-- Checkmark -->
+      <polyline points="8,16 18,26 40,4" 
+                stroke="url(#cassandraGradient)" 
+                stroke-width="6" 
+                fill="none" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"/>
+    </g>
+    
+    <!-- Small accent dots representing data points -->
+    <circle cx="95" cy="85" r="3" fill="url(#cassandraGradient)"/>
+    <circle cx="92" cy="128" r="3" fill="url(#cassandraGradient)"/>
+    <circle cx="95" cy="171" r="3" fill="url(#cassandraGradient)"/>
+  </g>
+  
+  <!-- Quality indicator pulse circle -->
+  <circle cx="200" cy="80" r="18" fill="none" stroke="url(#cassandraGradient)" stroke-width="2" opacity="0.6"/>
+  <circle cx="200" cy="80" r="10" fill="url(#cassandraGradient)" opacity="0.8"/>
+</svg>

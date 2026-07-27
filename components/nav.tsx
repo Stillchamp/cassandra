@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 export function Nav() {
@@ -14,7 +13,7 @@ export function Nav() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-semibold text-lg">
-            <Image src="/cassandra-logo.png" alt="Cassandra logo" width={32} height={32} className="h-8 w-8" />
+            <img src="/cassandra-logo.svg" alt="Cassandra logo" className="h-8 w-8" />
             <span>Cassandra</span>
           </Link>
 
