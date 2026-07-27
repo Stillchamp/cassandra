@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Zap } from 'lucide-react'
 
 export function Nav() {
   const pathname = usePathname()
@@ -14,9 +14,7 @@ export function Nav() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-semibold text-lg">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <Zap className="h-5 w-5" />
-            </div>
+            <Image src="/cassandra-logo.png" alt="Cassandra logo" width={32} height={32} className="h-8 w-8" />
             <span>Cassandra</span>
           </Link>
 
