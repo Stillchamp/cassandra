@@ -33,7 +33,6 @@ Create a `.env` file by copying the example file.
 HF_TOKEN=your_huggingface_api_key
 
 ```
-OR
 Generate a free Hugging Face API token from:
 
 https://huggingface.co/settings/tokens
@@ -123,7 +122,6 @@ The biggest challenge was obtaining reliable structured JSON from the language m
 
 ## Demo
 
-This submission includes either:
-
-- A live demo link, or
+- Link to Youtube Showing
 - A demonstration video showing Cassandra in action.
+- https://youtu.be/uNdPcCuuU6k
