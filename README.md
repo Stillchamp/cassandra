@@ -1,33 +1,129 @@
-# cassandra
+# Cassandra
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+Cassandra is an AI Quality Engineer that audits AI assistants. It detects hallucinations, prompt weaknesses, unsafe responses, and other quality issues, then recommends improvements and generates a safer replay response.
 
-## Built with v0
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+## Repository Structure
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_hDyJcYVpsUDVXWDEBpab7ZI5k29D)
+Cassandra is split into two repositories for easier development and deployment.
 
-## Getting Started
+- **Frontend** – Next.js application (UI)
+- **Backend** – FastAPI application (AI analysis API)
 
-First, run the development server:
+Clone both repositories before following the setup instructions.
+
+## How to Run
+
+### 1. Clone both repositories
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone <https://github.com/Stillchamp/cassandra.git> frontend
+git clone <https://github.com/Stillchamp/Cassandra-backend.git> backend
+```
+
+### 2. Configure Environment Variables
+
+Each repository contains a `.env.example` file.
+
+Create a `.env` file by copying the example file.
+
+#### Backend
+
+```env
+HF_TOKEN=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
+MODEL_ID=google/gemma-4-26B-A4B-it
+```
+OR
+Generate a free Hugging Face API token from:
+
+https://huggingface.co/settings/tokens
+
+#### Frontend
+
+```env
+NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+```
+
+### 3. Run the Backend
+
+```bash
+cd Cassandra
+
+python -m venv venv
+
+# macOS / Linux
+source venv/bin/activate
+
+# Windows
+venv\Scripts\activate
+
+pip install -r requirements.txt
+
+uvicorn app.main:app --reload
+```
+
+Backend runs at:
+
+```
+http://127.0.0.1:8000
+```
+
+### 4. Run the Frontend
+
+```bash
+cd cassandra-frontend
+
+pnpm install
+
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Frontend runs at:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-## Learn More
+---
 
-To learn more, take a look at the following resources:
+## What Cassandra Does
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+- Audits AI assistant conversations
+- Detects hallucinations and unsafe responses
+- Identifies the most critical quality issue
+- Explains the root cause
+- Suggests prompt improvements
+- Generates a safer replay response
+- Produces an overall quality score
+
+
+## How We Built It
+
+### Frontend
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- pnpm
+
+### Backend
+
+- FastAPI
+- Python
+- Hugging Face Inference API
+- Gemma 4 (Quality Analysis)
+- Gemma 3 (Replay Generation)
+
+
+## Challenges
+
+The biggest challenge was obtaining reliable structured JSON from the language model. Models occasionally returned reasoning or partially formatted responses instead of valid JSON. We solved this by refining the prompts and implementing a parser that extracts, sanitises, and validates the model output before generating the final quality report.
+
+
+## Demo
+
+This submission includes either:
+
+- A live demo link, or
+- A demonstration video showing Cassandra in action.
