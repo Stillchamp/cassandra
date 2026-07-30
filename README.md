@@ -30,8 +30,8 @@ Create a `.env` file by copying the example file.
 #### Backend
 
 ```env
-HF_TOKEN=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
-MODEL_ID=google/gemma-4-26B-A4B-it
+HF_TOKEN=your_huggingface_api_key
+
 ```
 OR
 Generate a free Hugging Face API token from:
