@@ -2,7 +2,7 @@
 
 Cassandra is an AI Quality Engineer that audits AI assistants. It detects hallucinations, prompt weaknesses, unsafe responses, and other quality issues, then recommends improvements and generates a safer replay response.
 
-
+---
 ## Repository Structure
 
 Cassandra is split into two repositories for easier development and deployment.
@@ -11,7 +11,7 @@ Cassandra is split into two repositories for easier development and deployment.
 - **Backend** – FastAPI application (AI analysis API)
 
 Clone both repositories before following the setup instructions.
-
+---
 ## How to Run
 
 ### 1. Clone both repositories
@@ -43,7 +43,7 @@ https://huggingface.co/settings/tokens
 ```env
 NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
 ```
-
+---
 ### 3. Run the Backend
 
 ```bash
@@ -67,7 +67,7 @@ Backend runs at:
 ```
 http://127.0.0.1:8000
 ```
-
+---
 ### 4. Run the Frontend
 
 ```bash
@@ -96,7 +96,7 @@ http://localhost:3000
 - Generates a safer replay response
 - Produces an overall quality score
 
-
+---
 ## How We Built It
 
 ### Frontend
@@ -115,7 +115,7 @@ http://localhost:3000
 - Gemma 4 (Quality Analysis)
 - Gemma 3 (Replay Generation)
 
-
+---
 ## Challenges
 
 The biggest challenge was obtaining reliable structured JSON from the language model. Models occasionally returned reasoning or partially formatted responses instead of valid JSON. We solved this by refining the prompts and implementing a parser that extracts, sanitises, and validates the model output before generating the final quality report.
